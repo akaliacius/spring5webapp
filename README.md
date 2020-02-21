@@ -1,4 +1,4 @@
-#Spring boot MVC app
+# Spring boot MVC app
 Simple spring boot MVC web application with in memory H2 database. It has three MVC controllers with injected repositories
 to display Authors, Books and Publishers. 
 
