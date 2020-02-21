@@ -6,6 +6,7 @@ import com.andriusk.spring5webapp.model.Publisher;
 import com.andriusk.spring5webapp.repositories.AuthorRepository;
 import com.andriusk.spring5webapp.repositories.BookRepository;
 import com.andriusk.spring5webapp.repositories.PublisherRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
@@ -13,10 +14,11 @@ import org.springframework.stereotype.Component;
 @Component
 public class DevBootstrap implements ApplicationListener<ContextRefreshedEvent> {
 
-    private AuthorRepository authorRepository;
-    private BookRepository bookRepository;
-    private PublisherRepository publisherRepository;
+    private final AuthorRepository authorRepository;
+    private final BookRepository bookRepository;
+    private final PublisherRepository publisherRepository;
 
+    @Autowired
     public DevBootstrap(AuthorRepository authorRepository, BookRepository bookRepository,
                         PublisherRepository publisherRepository) {
         this.authorRepository = authorRepository;
